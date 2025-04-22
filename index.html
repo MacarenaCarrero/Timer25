@@ -11,25 +11,27 @@
       <!-- contendor de todo -->
       <div class="container">
         <!-- contendordigital -->
-        <div class="digitalClockContainer">
-          <div class="drawHours">
-            <span id="hour" class="hour"></span>
-            <span id="min" class="min"></span>
-            <span id="seconds" class="seconds"></span>
+        <div class="style conDate">
+          <div id="drawHours">
+            <span id="hours"></span>
+            <span id="mins"></span>
+            <span id="seconds"></span>
           </div>
-          <div>
-            <span></span>
-            <span id="dayWeek" class="dayWeek"></span>
-            <span></span>
+          <div id="drawDates" class="style">
+            <span id="dayNameWeek"></span>
+            <span id="dayNumberWeek"></span>
+            <span id="nameMonth"></span>
             <span id="year"></span>
           </div>
         </div>
         <!--  -->
         <!-- contendor analogico -->
         <div class="analogClockContainer">
-          <div id="analogClock" class="analogClock">
+          <div id="drawHours" class="analogClock">
             <div class="circle"></div>
-            <div class="needleHour"></div>
+            <div id="hours" class="needleHour"></div>
+            <div id="mins" class="needleMinutes"></div>
+            <div id="seconds" class="needleSeconds"></div>
           </div>
         </div>
         <!--  -->

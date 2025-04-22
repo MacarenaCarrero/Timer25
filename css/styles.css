@@ -39,6 +39,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+.style{
+  font-size: 30px;
+  font-weight: 700;
+}
 .analogClock {
   position: relative;
   width: 15.625rem;
@@ -46,19 +50,6 @@ body {
   border-radius: 50%;
   background-color: rgb(116, 116, 116);
   color: white;
-}
-.hour {
-  width: 15.625rem;
-  height: 9.375rem;
-  font-size: 50px;
-}
-.min {
-  font-size: 50px;
-}
-.date {
-  width: 15.625rem;
-  height: 9.375rem;
-  border: white 1px solid;
 }
 .needleHour {
   position: absolute;
@@ -68,4 +59,27 @@ body {
   background-color: bisque;
   top: 25px;
   left: 115px;
+}
+.needleMinutes{
+  position: absolute;
+  width: 8px;
+  height: 110px;
+  border-radius: 1.5rem;
+  background-color: aliceblue;
+  top: 15px;
+  left: 117px;
+}
+.needleSeconds{
+  position: absolute;
+  width: 4px;
+  height: 120px;
+  background-color: red;
+  top: 5px;
+  left: 121px;
+  
+}
+.conDate{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
