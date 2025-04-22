@@ -1,28 +1,49 @@
-const hoursElement = document.getElementById('hours');
-const dayNameWeekElement = document.getElementById('dayWeek');
+//digital
+const hoursDigElement = document.getElementById('hoursDig');
+const minsDigElement = document.getElementById('minsDig');
+const secondsDigElement = document.getElementById('secondsDig');
+//fecha
+const dayWeekElement = document.getElementById('dayWeek');
 const dayNumberWeekElement = document.getElementById('dayNumberWeek');
 const nameMonthElement = document.getElementById('nameMonth');
-const minsElement = document.getElementById('mins');
-const secondsElement = document.getElementById('seconds');
 const yearElement = document.getElementById('year');
-const drawHoursElement = document.getElementById('drawHours');
-const drawDatesElement = document.getElementById('drawDates');
+//
+const digitalClockElement = document.getElementById('digitalClock');
+// const drawDatesElement = document.getElementById('drawDates');
 
+//agujas analógico
+const needleSecond = document.getElementById('needleSecond');
+const needleMinute = document.getElementById('needleMinute');
+const needleHour = document.getElementById('needleHour');
+
+//
 const drawHour = () => {
   const date = new Date();
-  let hoursElement = date.getHours();
-  let minutesElement = date.getMinutes();
-  let secondsElement = date.getSeconds();
 
-  hoursElement = hoursElement < 10 ? '0' + hoursElement : hoursElement;
-  minutesElement = minutesElement < 10 ? '0' + minutesElement : minutesElement;
-  secondsElement = secondsElement < 10 ? '0' + secondsElement : secondsElement;
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
 
-  drawHoursElement.textContent = `${hoursElement}:${minutesElement}`;
+  //digitl
+  hoursDigElement.textContent = hours < 10 ? '0' + hours : hours;
+  minsDigElement.textContent = minutes < 10 ? '0' + minutes : minutes;
+  secondsDigElement.textContent = seconds < 10 ? '0' + seconds : seconds;
+
+  digitalClockElement.textContent = `${hours}:${minutes}:${seconds}`;
+  // reloj   formulas para los grados de rotate
+  const secondDeg = (seconds / 60) * 360;
+  const minuteDeg = (minutes / 60) * 360 + (seconds / 60) * 6;
+  const hourDeg = ((hours % 12) / 12) * 360 + (minutes / 60) * 30;
+
+  needleSecond.style.transform = `rotate(${secondDeg}deg)`;
+  needleMinute.style.transform = `rotate(${minuteDeg}deg)`;
+  needleHour.style.transform = `rotate(${hourDeg}deg)`;
 };
 
+// fecha
 const getDate = () => {
   const date = new Date();
+
   const days = [
     'Domingo',
     'Lunes',
@@ -46,17 +67,19 @@ const getDate = () => {
     'Noviembre',
     'Diciembre'
   ];
-  let dayNameWeekElement = days[date.getDay()];
-  let dayNumberWeekElement = date.getDate();
-  let nameMonthElement = months[date.getMonth()];
-  let yearElement = date.getFullYear();
 
-  drawDatesElement.textContent = `${dayNameWeekElement} ${dayNumberWeekElement} ${nameMonthElement} ${yearElement}`;
+  dayWeekElement.textContent = days[date.getDay()];
+  dayNumberWeekElement.textContent = date.getDate();
+  nameMonthElement.textContent = months[date.getMonth()];
+  yearElement.textContent = date.getFullYear();
 };
 
+// aqui se actualiza al intervalo que le de
 setInterval(() => {
   drawHour();
   getDate();
 }, 1000);
+
+// llamar a las funciones
 drawHour();
 getDate();

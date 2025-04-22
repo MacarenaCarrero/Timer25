@@ -39,9 +39,12 @@ body {
   display: flex;
   flex-direction: column;
 }
-.style{
+.styleDig{
   font-size: 30px;
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .analogClock {
   position: relative;
@@ -51,23 +54,27 @@ body {
   background-color: rgb(116, 116, 116);
   color: white;
 }
-.needleHour {
-  position: absolute;
-  width: 15px;
-  height: 100px;
-  border-radius: 1.5rem;
-  background-color: bisque;
-  top: 25px;
-  left: 115px;
+.analogClock::after{
+  content: "";
+position: absolute;
+width: 40px;
+height:40px;
+background-color: black;
+top: 105px;
+left: 105px;
+border-radius: 50%;
+
 }
-.needleMinutes{
-  position: absolute;
-  width: 8px;
-  height: 110px;
-  border-radius: 1.5rem;
-  background-color: aliceblue;
-  top: 15px;
-  left: 117px;
+.analogClock::before{
+content: "";
+position: absolute;
+width: 230px;
+height: 230px;
+border-radius: 50%;
+top: 10px;
+left: 10px;
+background-color: rgb(175, 175, 175);
+box-shadow: 0 0 8px 8px inset rgb(56, 56, 56);
 }
 .needleSeconds{
   position: absolute;
@@ -76,10 +83,26 @@ body {
   background-color: red;
   top: 5px;
   left: 121px;
-  
+  transform-origin: bottom center;
 }
-.conDate{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.needleMinutes{
+  position: absolute;
+  width: 8px;
+  height: 110px;
+  border-radius: 1.5rem;
+  background-color: rgb(255, 255, 255);
+  top: 15px;
+  left: 117px;
+  transform-origin: bottom center;
+
+}
+.needleHour {
+  position: absolute;
+  width: 15px;
+  height: 100px;
+  border-radius: 1.5rem;
+  background-color: rgb(0, 0, 0);
+  top: 25px;
+  left: 115px;
+  transform-origin: bottom center;
 }
