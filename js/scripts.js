@@ -24,10 +24,12 @@ const drawHour = () => {
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
 
-  //digitl
-  hoursDigElement.textContent = hours < 10 ? '0' + hours : hours;
-  minsDigElement.textContent = minutes < 10 ? '0' + minutes : minutes;
-  secondsDigElement.textContent = seconds < 10 ? '0' + seconds : seconds;
+  //digitl      no me añade el cero
+  hoursDigElement.textContent = hours < 10 ? `0${hours}` : hours;
+  minsDigElement.textContent = minutes < 10 ? `0${minutes}` : minutes;
+  secondsDigElement.textContent = seconds < 10 ? `0${seconds}` : seconds;
+
+  digitalClockElement.textContent = hours < 10 ? `0${hours}` : hours;
 
   digitalClockElement.textContent = `${hours}:${minutes}:${seconds}`;
   // reloj   formulas para los grados de rotate
