@@ -21,4 +21,51 @@ nav ul {
 body {
   margin: 0;
   font-family: sans-serif;
+  background-color: rgb(46, 46, 46);
+  display: flex;
+  justify-content: center;
+  margin-top: 6.25rem;
+  color: white;
+}
+.container {
+  width: 56.25rem;
+  height: 37.5rem;
+  border: white 1px solid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.digitalClockContainer {
+  display: flex;
+  flex-direction: column;
+}
+.analogClock {
+  position: relative;
+  width: 15.625rem;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgb(116, 116, 116);
+  color: white;
+}
+.hour {
+  width: 15.625rem;
+  height: 9.375rem;
+  font-size: 50px;
+}
+.min {
+  font-size: 50px;
+}
+.date {
+  width: 15.625rem;
+  height: 9.375rem;
+  border: white 1px solid;
+}
+.needleHour {
+  position: absolute;
+  width: 15px;
+  height: 100px;
+  border-radius: 1.5rem;
+  background-color: bisque;
+  top: 25px;
+  left: 115px;
 }
