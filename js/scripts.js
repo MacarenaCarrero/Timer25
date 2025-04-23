@@ -23,13 +23,15 @@ const drawHour = () => {
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
+  console.log(hours < 10 ? `0${hours}` : hours);
 
-  //digitl      no me añade el cero
+  //digitl
   hoursDigElement.textContent = hours < 10 ? `0${hours}` : hours;
   minsDigElement.textContent = minutes < 10 ? `0${minutes}` : minutes;
   secondsDigElement.textContent = seconds < 10 ? `0${seconds}` : seconds;
 
-  digitalClockElement.textContent = `${hours}:${minutes}:${seconds}`;
+  // digitalClockElement.textContent = `${hours}:${minutes}:${seconds}`;
+
   // reloj   formulas para los grados de rotate
   const secondDeg = (seconds / 60) * 360;
   const minuteDeg = (minutes / 60) * 360 + (seconds / 60) * 6;
