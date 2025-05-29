@@ -21,19 +21,30 @@ nav ul {
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: rgb(46, 46, 46);
+  background-color: #efbfd6;
   display: flex;
   justify-content: center;
   margin-top: 6.25rem;
-  color: white;
+  color: #209ea7;
 }
 .container {
-  width: 56.25rem;
-  height: 37.5rem;
-  border: white 1px solid;
+  width: 350px;
+  height: 600px;
+  border: #209ea7 8px solid;
+  box-shadow: inset #209ea7 0 0 12px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-image: url(../assets/cute-cartoon-cat-transparent-background-735811696674569pfu81cnq1t\ 1.png);
+  background-repeat: no-repeat;
+  background-position: 0 460px;
+}
+@media screen and (width >=768px) {
+  .container {
+    flex-direction: row;
+    width: 650px;
+  }
 }
 .digitalClockContainer {
   display: flex;
@@ -51,15 +62,17 @@ body {
   width: 15.625rem;
   height: 250px;
   border-radius: 50%;
-  background-color: rgb(116, 116, 116);
+  background-color: #209ea7;
   color: white;
+  margin-bottom: 40px;
 }
 .analogClock::after {
   content: '';
   position: absolute;
   width: 40px;
   height: 40px;
-  background-color: black;
+  background-color: #209ea7;
+  box-shadow: #ffffff 0 0 12px;
   top: 105px;
   left: 105px;
   border-radius: 50%;
@@ -72,8 +85,8 @@ body {
   border-radius: 50%;
   top: 10px;
   left: 10px;
-  background-color: rgb(175, 175, 175);
-  box-shadow: 0 0 8px 8px inset rgb(56, 56, 56);
+  background-color: #efbfd6;
+  box-shadow: 0 0 8px 3px inset #ffffff;
 }
 .needleSeconds {
   position: absolute;
@@ -99,7 +112,7 @@ body {
   width: 15px;
   height: 100px;
   border-radius: 1.5rem;
-  background-color: rgb(0, 0, 0);
+  background-color: #209ea7;
   top: 25px;
   left: 115px;
   transform-origin: bottom;
